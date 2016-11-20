@@ -14,15 +14,15 @@ import java.util.ArrayList;
 public class Estratego extends javax.swing.JFrame {
 
      ficha tablero[][];
-        ArrayList<Player> jugadores;
+     ArrayList<Player> jugadores;
         int f1,c1,f2,c2;
     public Estratego() {
         initComponents();
-                tablero=new ficha[10][10];
+        tablero=new ficha[10][10];
         jugadores=new ArrayList<>();
         jp1.setVisible(true);
-           jp3.setVisible(false);
-           jp4.setVisible(false);   
+        jp3.setVisible(false);
+        jp4.setVisible(false);   
         jp2.setVisible(false);
     }
 
@@ -46,8 +46,10 @@ public class Estratego extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1658, 1940));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jp1.setPreferredSize(new java.awt.Dimension(1628, 930));
+        jp1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn1.setText("Login");
         btn1.addActionListener(new java.awt.event.ActionListener() {
@@ -55,29 +57,15 @@ public class Estratego extends javax.swing.JFrame {
                 btn1ActionPerformed(evt);
             }
         });
+        jp1.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(636, 400, -1, -1));
 
         btn2.setText("Create Player");
+        jp1.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(636, 441, -1, -1));
 
-        javax.swing.GroupLayout jp1Layout = new javax.swing.GroupLayout(jp1);
-        jp1.setLayout(jp1Layout);
-        jp1Layout.setHorizontalGroup(
-            jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp1Layout.createSequentialGroup()
-                .addGap(636, 636, 636)
-                .addGroup(jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn1)
-                    .addComponent(btn2)))
-        );
-        jp1Layout.setVerticalGroup(
-            jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp1Layout.createSequentialGroup()
-                .addGap(400, 400, 400)
-                .addComponent(btn1)
-                .addGap(18, 18, 18)
-                .addComponent(btn2))
-        );
+        getContentPane().add(jp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jp2.setPreferredSize(new java.awt.Dimension(1628, 930));
+        jp2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnIngresar.setText("Ingresar");
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
@@ -85,25 +73,12 @@ public class Estratego extends javax.swing.JFrame {
                 btnIngresarActionPerformed(evt);
             }
         });
+        jp2.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
 
-        javax.swing.GroupLayout jp2Layout = new javax.swing.GroupLayout(jp2);
-        jp2.setLayout(jp2Layout);
-        jp2Layout.setHorizontalGroup(
-            jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp2Layout.createSequentialGroup()
-                .addGap(754, 754, 754)
-                .addComponent(btnIngresar)
-                .addContainerGap(801, Short.MAX_VALUE))
-        );
-        jp2Layout.setVerticalGroup(
-            jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp2Layout.createSequentialGroup()
-                .addGap(346, 346, 346)
-                .addComponent(btnIngresar)
-                .addContainerGap(561, Short.MAX_VALUE))
-        );
+        getContentPane().add(jp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 999, -1, -1));
 
         jp3.setPreferredSize(new java.awt.Dimension(1628, 930));
+        jp3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnIpartida.setText("Iniciar Partida");
         btnIpartida.addActionListener(new java.awt.event.ActionListener() {
@@ -111,94 +86,26 @@ public class Estratego extends javax.swing.JFrame {
                 btnIpartidaActionPerformed(evt);
             }
         });
+        jp3.add(btnIpartida, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
 
-        javax.swing.GroupLayout jp3Layout = new javax.swing.GroupLayout(jp3);
-        jp3.setLayout(jp3Layout);
-        jp3Layout.setHorizontalGroup(
-            jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp3Layout.createSequentialGroup()
-                .addGap(705, 705, 705)
-                .addComponent(btnIpartida)
-                .addContainerGap(824, Short.MAX_VALUE))
-        );
-        jp3Layout.setVerticalGroup(
-            jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp3Layout.createSequentialGroup()
-                .addGap(342, 342, 342)
-                .addComponent(btnIpartida)
-                .addContainerGap(565, Short.MAX_VALUE))
-        );
+        getContentPane().add(jp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 1, -1, -1));
 
         jp4.setPreferredSize(new java.awt.Dimension(1628, 930));
-
-        javax.swing.GroupLayout jp4Layout = new javax.swing.GroupLayout(jp4);
-        jp4.setLayout(jp4Layout);
-        jp4Layout.setHorizontalGroup(
-            jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1628, Short.MAX_VALUE)
-        );
-        jp4Layout.setVerticalGroup(
-            jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 930, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jp1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jp3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jp4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jp1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(1, 1, 1)
-                    .addComponent(jp3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1009, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jp4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
+        jp4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jp4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
        jp1.setVisible(false);
-           jp3.setVisible(false);
-           jp4.setVisible(false);   
-        jp2.setVisible(true);    // TODO add your handling code here:
+       jp3.setVisible(false);
+       jp4.setVisible(false);   
+       jp2.setVisible(true);    // TODO add your handling code here:
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-         jp2.setVisible(false);
+        jp2.setVisible(false);
         jp3.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_btnIngresarActionPerformed
 

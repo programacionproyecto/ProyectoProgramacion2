@@ -24,6 +24,7 @@ public class Estratego extends javax.swing.JFrame {
            jp3.setVisible(false);
            jp4.setVisible(false);   
         jp2.setVisible(false);
+        jp6.setVisible(false);
     }
 
     /**
@@ -40,6 +41,9 @@ public class Estratego extends javax.swing.JFrame {
         btn2 = new javax.swing.JButton();
         jp2 = new javax.swing.JPanel();
         btnIngresar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
+        txtUser = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JTextField();
         jp3 = new javax.swing.JPanel();
         btnIpartida = new javax.swing.JButton();
         jp4 = new javax.swing.JPanel();
@@ -143,6 +147,12 @@ public class Estratego extends javax.swing.JFrame {
         p92 = new javax.swing.JButton();
         p98 = new javax.swing.JButton();
         p95 = new javax.swing.JButton();
+        jp6 = new javax.swing.JPanel();
+        btnCrear = new javax.swing.JButton();
+        btnRegresar2 = new javax.swing.JButton();
+        txtUser2 = new javax.swing.JTextField();
+        txtPassword2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1658, 1940));
@@ -157,6 +167,11 @@ public class Estratego extends javax.swing.JFrame {
         });
 
         btn2.setText("Create Player");
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp1Layout = new javax.swing.GroupLayout(jp1);
         jp1.setLayout(jp1Layout);
@@ -164,9 +179,9 @@ public class Estratego extends javax.swing.JFrame {
             jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp1Layout.createSequentialGroup()
                 .addGap(636, 636, 636)
-                .addGroup(jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn1)
-                    .addComponent(btn2)))
+                .addGroup(jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jp1Layout.setVerticalGroup(
             jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,21 +201,40 @@ public class Estratego extends javax.swing.JFrame {
             }
         });
 
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jp2Layout = new javax.swing.GroupLayout(jp2);
         jp2.setLayout(jp2Layout);
         jp2Layout.setHorizontalGroup(
             jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp2Layout.createSequentialGroup()
-                .addGap(754, 754, 754)
-                .addComponent(btnIngresar)
-                .addContainerGap(801, Short.MAX_VALUE))
+                .addGap(636, 636, 636)
+                .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtUser)
+                    .addGroup(jp2Layout.createSequentialGroup()
+                        .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPassword))
+                .addContainerGap(776, Short.MAX_VALUE))
         );
         jp2Layout.setVerticalGroup(
             jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp2Layout.createSequentialGroup()
-                .addGap(346, 346, 346)
-                .addComponent(btnIngresar)
-                .addContainerGap(561, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp2Layout.createSequentialGroup()
+                .addContainerGap(387, Short.MAX_VALUE)
+                .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIngresar)
+                    .addComponent(btnRegresar))
+                .addGap(441, 441, 441))
         );
 
         jp3.setPreferredSize(new java.awt.Dimension(1628, 930));
@@ -217,16 +251,16 @@ public class Estratego extends javax.swing.JFrame {
         jp3Layout.setHorizontalGroup(
             jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp3Layout.createSequentialGroup()
-                .addGap(545, 545, 545)
+                .addGap(651, 651, 651)
                 .addComponent(btnIpartida)
-                .addContainerGap(984, Short.MAX_VALUE))
+                .addContainerGap(878, Short.MAX_VALUE))
         );
         jp3Layout.setVerticalGroup(
             jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp3Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(348, 348, 348)
                 .addComponent(btnIpartida)
-                .addContainerGap(841, Short.MAX_VALUE))
+                .addContainerGap(559, Short.MAX_VALUE))
         );
 
         jp4.setPreferredSize(new java.awt.Dimension(1628, 930));
@@ -1424,6 +1458,61 @@ public class Estratego extends javax.swing.JFrame {
                 .addContainerGap(263, Short.MAX_VALUE))
         );
 
+        jp6.setPreferredSize(new java.awt.Dimension(1628, 930));
+
+        btnCrear.setText("Crear");
+        btnCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearActionPerformed(evt);
+            }
+        });
+
+        btnRegresar2.setText("regresar");
+        btnRegresar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresar2ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setText("REGISTRATE!");
+
+        javax.swing.GroupLayout jp6Layout = new javax.swing.GroupLayout(jp6);
+        jp6.setLayout(jp6Layout);
+        jp6Layout.setHorizontalGroup(
+            jp6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp6Layout.createSequentialGroup()
+                .addGroup(jp6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp6Layout.createSequentialGroup()
+                        .addGap(620, 620, 620)
+                        .addGroup(jp6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtUser2)
+                            .addGroup(jp6Layout.createSequentialGroup()
+                                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnRegresar2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtPassword2)))
+                    .addGroup(jp6Layout.createSequentialGroup()
+                        .addGap(655, 655, 655)
+                        .addComponent(jLabel1)))
+                .addContainerGap(790, Short.MAX_VALUE))
+        );
+        jp6Layout.setVerticalGroup(
+            jp6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp6Layout.createSequentialGroup()
+                .addGap(301, 301, 301)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(txtUser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(jp6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCrear)
+                    .addComponent(btnRegresar2))
+                .addContainerGap(475, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1446,6 +1535,11 @@ public class Estratego extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jp4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jp6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(20, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1467,6 +1561,11 @@ public class Estratego extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(jp4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jp6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(1000, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1889,6 +1988,25 @@ public class Estratego extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_p95ActionPerformed
 
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+       
+    }//GEN-LAST:event_btnCrearActionPerformed
+
+    private void btnRegresar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresar2ActionPerformed
+        jp6.setVisible(false);
+        jp1.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_btnRegresar2ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        jp1.setVisible(false);
+        jp6.setVisible(true);
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        jp2.setVisible(false);
+        jp1.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1933,16 +2051,21 @@ public class Estratego extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn1;
     private javax.swing.JButton btn2;
+    private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnIpartida;
+    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnRegresar2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jp1;
     private javax.swing.JPanel jp2;
     private javax.swing.JPanel jp3;
     private javax.swing.JPanel jp4;
     private javax.swing.JPanel jp5;
+    private javax.swing.JPanel jp6;
     private javax.swing.JButton p00;
     private javax.swing.JButton p01;
     private javax.swing.JButton p02;
@@ -2043,5 +2166,9 @@ public class Estratego extends javax.swing.JFrame {
     private javax.swing.JButton p97;
     private javax.swing.JButton p98;
     private javax.swing.JButton p99;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtPassword2;
+    private javax.swing.JTextField txtUser;
+    private javax.swing.JTextField txtUser2;
     // End of variables declaration//GEN-END:variables
 }
